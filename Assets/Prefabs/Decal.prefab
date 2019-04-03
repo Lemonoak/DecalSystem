@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5796552275307598381}
   - component: {fileID: 5796552275307598382}
   - component: {fileID: 5796552275307598383}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Decal
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -87,7 +87,7 @@ MeshCollider:
   m_GameObject: {fileID: 5796552275307598376}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 14

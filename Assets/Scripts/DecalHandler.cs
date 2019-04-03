@@ -22,9 +22,11 @@ public class DecalHandler : MonoBehaviour
 
     void GetPosition()
     {
+        //LayerMask LayersToIgnore;
+        //LayersToIgnore =~ LayerMask.GetMask("Decal");
         RaycastHit RayHit;
         Ray Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        if(Physics.Raycast(Ray, out RayHit))
+        if(Physics.Raycast(Ray, out RayHit/*, LayersToIgnore*/))
         {
             //Debug.Log(RayHit.point);
             //Debug.Log(RayHit.normal);
