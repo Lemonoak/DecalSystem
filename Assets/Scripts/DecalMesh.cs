@@ -1,18 +1,33 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class DecalMesh : MonoBehaviour
 {
 
-    public Material MeshMaterial;
+    //public Material MeshMaterial;
 
-    void Update()
+    public DecalHandler Owner;
+
+    [System.NonSerialized]
+    public DecalHandler PoolOwner;
+    [System.NonSerialized]
+    public int PoolIndex;
+
+    IEnumerator ReturnToPool()
     {
-        if (Input.GetMouseButtonDown(1))
-        {
-
-        }
+        yield return new WaitForSeconds(5.0f);
+        //PoolOwner.ReturnDecal(PoolIndex);
+        gameObject.SetActive(false);
     }
 
+    public void PlacedDecal()
+    {
+        StopAllCoroutines();
+        StartCoroutine(ReturnToPool());
+    }
+
+    //This was to make my own meshes but couldnt make it work
+    /*
     public void SpawnMesh()
     {
         //The Gameobject
@@ -24,10 +39,12 @@ public class DecalMesh : MonoBehaviour
         //Adds a mesh renderer to the object
         MeshRenderer MyMeshRenderer = MyPlane.AddComponent<MeshRenderer>();
         MyMeshRenderer.material.color = Color.red;
-        MyMeshRenderer.material = MeshMaterial;
+        //MyMeshRenderer.material = MeshMaterial;
+
+        //StartCoroutine(ReturnToPool());
     }
 
-    Mesh MyMesh(float Width, float Height)
+    public Mesh MyMesh(float Width, float Height)
     {
         Mesh ThisMesh = new Mesh();
         ThisMesh.name = "MeshByCode";
@@ -54,4 +71,6 @@ public class DecalMesh : MonoBehaviour
 
         return ThisMesh;
     }
+
+    */
 }
