@@ -6,8 +6,6 @@ public class DecalMesh : MonoBehaviour
 
     //public Material MeshMaterial;
 
-    public DecalHandler Owner;
-
     [System.NonSerialized]
     public DecalHandler PoolOwner;
     [System.NonSerialized]
@@ -16,7 +14,6 @@ public class DecalMesh : MonoBehaviour
     IEnumerator ReturnToPool()
     {
         yield return new WaitForSeconds(5.0f);
-        //PoolOwner.ReturnDecal(PoolIndex);
         gameObject.SetActive(false);
     }
 
