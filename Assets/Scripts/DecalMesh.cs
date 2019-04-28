@@ -8,8 +8,8 @@ public class DecalMesh : MonoBehaviour
 
     [System.NonSerialized]
     public DecalHandler PoolOwner;
-    [System.NonSerialized]
-    public int PoolIndex;
+    //[System.NonSerialized]
+    //public int PoolIndex;
 
     IEnumerator ReturnToPool()
     {

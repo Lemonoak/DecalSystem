@@ -32,7 +32,7 @@ public class DecalHandler : MonoBehaviour
         {
             MeshPool[DecalPoolFreeIndex].transform.position = Position;
             MeshPool[DecalPoolFreeIndex].transform.rotation = Rot;
-            MeshPool[DecalPoolFreeIndex].PoolIndex = DecalPoolFreeIndex;
+            //MeshPool[DecalPoolFreeIndex].PoolIndex = DecalPoolFreeIndex;
             MeshPool[DecalPoolFreeIndex].gameObject.SetActive(true);
             MeshPool[DecalPoolFreeIndex].PlacedDecal();
             DecalPoolFreeIndex++;
@@ -43,15 +43,15 @@ public class DecalHandler : MonoBehaviour
         }
     }
 
-    public void ReturnDecal(int Index)
-    {
-        DecalPoolFreeIndex--;
-        DecalMesh ReturningDecal = MeshPool[Index];
-        MeshPool[Index] = MeshPool[DecalPoolFreeIndex];
-        MeshPool[Index].PoolIndex = Index;
-        MeshPool[DecalPoolFreeIndex] = ReturningDecal;
-        ReturningDecal.gameObject.SetActive(false);
-    }
+    //public void ReturnDecal(int Index)
+    //{
+    //    DecalPoolFreeIndex--;
+    //    DecalMesh ReturningDecal = MeshPool[Index];
+    //    MeshPool[Index] = MeshPool[DecalPoolFreeIndex];
+    //    MeshPool[Index].PoolIndex = Index;
+    //    MeshPool[DecalPoolFreeIndex] = ReturningDecal;
+    //    ReturningDecal.gameObject.SetActive(false);
+    //}
 
     public static DecalHandler GetInstance()
     {
